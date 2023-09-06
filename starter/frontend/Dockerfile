@@ -2,7 +2,7 @@
 FROM node:14 as build-stage
 
 # Set a working directory
-WORKDIR /app
+WORKDIR /frontend
 
 # Copy package.json and package-lock.json before other files
 # Utilize Docker cache to save re-installing dependencies if unchanged
@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the "public" and "src" directories and other necessary files
-COPY public/ /app/public/
+COPY  /public  /public
 COPY src/ src/
 COPY .env ./
 
