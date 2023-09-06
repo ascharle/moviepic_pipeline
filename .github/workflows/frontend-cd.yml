@@ -32,14 +32,6 @@ jobs:
       - name: Run lint
         run: npm run lint
         continue-on-error: true # Continue running even if there are linting errors
-      - name: List Files
-        run: ls -al
-
-      - name: Change to Project Directory
-        run: cd moviepic_pipeline/starter/frontend/package.json
-
-      - name: Install Dependencies
-        run: npm install
         
       - name: Run tests
         run: npm run test
