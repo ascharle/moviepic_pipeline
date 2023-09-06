@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm ci
 
 # Copy code
-COPY . .
+COPY ./ ./
 
 # Build the app
 RUN npm run build
