@@ -27,8 +27,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install --prefix/home/runner/work/moviepic_pipeline/starter/frontend/package.json --prefix path/to/your/project
-
+        run: npm install --prefix/home/runner/work/moviepic_pipeline/starter/frontend/package.jso
       - name: Run lint
         run: npm run lint
         continue-on-error: true # Continue running even if there are linting errors
