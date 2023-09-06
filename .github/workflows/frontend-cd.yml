@@ -32,7 +32,9 @@ jobs:
       - name: Run lint
         run: npm run lint
         continue-on-error: true # Continue running even if there are linting errors
-
+      - name: List Files
+        run: ls -al
+        
       - name: Run tests
         run: npm run test
 
