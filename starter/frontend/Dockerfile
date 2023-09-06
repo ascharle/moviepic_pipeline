@@ -2,7 +2,7 @@
 FROM node:14 as build-stage
 
 # Set a working directory
-WORKDIR /frontend
+WORKDIR /app
 
 # Copy package.json and package-lock.json before other files
 # Utilize Docker cache to save re-installing dependencies if unchanged
