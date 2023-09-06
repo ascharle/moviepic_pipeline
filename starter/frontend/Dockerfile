@@ -12,10 +12,12 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the "public" and "src" directories and other necessary files
-COPY public/ public/
+COPY public/ /app/public/
 COPY src/ src/
 COPY .env ./
 
 # Build the project
 ARG REACT_APP_MOVIE_API_URL
+RUN ls -al /app/public/
+
 RUN npm run build
