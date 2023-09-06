@@ -38,14 +38,14 @@ jobs:
       - name: AWS ECR Login
         uses: aws-actions/amazon-ecr-login@v1
         with:
-          mask-password: 'true'
-          registry: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com
-      
+        mask-password: 'true'
+            registry: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com
+            region: us-east-1
       - name: Build application with Docker
         run: |
           docker build --build-arg REACT_APP_MOVIE_API_URL=${{ secrets.REACT_APP_MOVIE_API_URL }} -t frontend .
-          docker tag frontend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ecr.us-east-1.amazonaws.com/front:latest
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ecr.us-east-1.amazonaws.com/frontend:latest
+          docker tag frontend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ AWS_REGION }}.amazonaws.com/front:latest
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
       
       - name: Deploy to EKS Cluster
         run: |
