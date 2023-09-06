@@ -55,6 +55,6 @@ jobs:
       
       - name: Deploy to EKS Cluster
         run: |
-          kubectl apply -f deployment.yaml
+          kubectl apply -f kusotmization.yml
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
