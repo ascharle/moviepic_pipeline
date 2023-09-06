@@ -38,6 +38,7 @@ jobs:
       - name: AWS ECR Login
         uses: aws-actions/amazon-ecr-login@v1
         with:
+          mask-password: 'true'
           registry: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
       
       - name: Build application with Docker
